@@ -1,6 +1,8 @@
 # Timber
 A Timberman bot that wins the game for you!
 
+![Timber Demo](DEMO/ZOCfyYwRCi.gif)
+
 # Steps to use:
 1) Launch Timberman
 2) Set resolution to 1280x768 windowed.
