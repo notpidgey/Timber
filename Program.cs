@@ -14,8 +14,11 @@ namespace Timber
     {
         static void Main(string[] args)
         {
-            Console.Write("Please choose MS interval \nRecommended 140+ \nInterval: ");
+            Console.Write("Please choose MS interval \nRecommended 145+ \nInterval: ");
             int number = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Please choose a score: ");
+            int scorewanted = Convert.ToInt32(Console.ReadLine());
+
             Process[] processes = Process.GetProcessesByName("Timberman");
 
             foreach (Process p in processes)
@@ -25,24 +28,24 @@ namespace Timber
                 Thread.Sleep(2000);
                 Actions.SendKeyss(windowHandle, "d");
 
-
+                int score = 0;
                 string left = Actions.GetColorAt(483, 467).ToString();
                 string right = Actions.GetColorAt(799, 478).ToString();
 
                 while (true)
                 {
-                    if (left == Actions.GetColorAt(483, 467).ToString())
+                    while (left == Actions.GetColorAt(483, 467).ToString())
                     {
                         Actions.SendKeyss(windowHandle, "a");
+                        score++;
                         Thread.Sleep(number);
                     }
-                    else
+
+                    while (right == Actions.GetColorAt(799, 478).ToString())
                     {
-                        while(right == Actions.GetColorAt(799, 478).ToString())
-                        {
-                            Actions.SendKeyss(windowHandle, "d");
-                            Thread.Sleep(number);
-                        }
+                        Actions.SendKeyss(windowHandle, "d");
+                        score++;
+                        Thread.Sleep(number);
                     }
                 }
             }
