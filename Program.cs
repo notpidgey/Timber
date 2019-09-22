@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace Timber
         static void Main(string[] args)
         {
             Console.Write("Please choose MS interval \nRecommended 140+ \nInterval: ");
-            int number = Console.Read();
+            int number = Convert.ToInt32(Console.ReadLine());
             Process[] processes = Process.GetProcessesByName("Timberman");
 
             foreach (Process p in processes)
@@ -25,6 +25,7 @@ namespace Timber
                 Thread.Sleep(2000);
                 Actions.SendKeyss(windowHandle, "d");
 
+
                 string left = Actions.GetColorAt(483, 467).ToString();
                 string right = Actions.GetColorAt(799, 478).ToString();
 
@@ -33,14 +34,14 @@ namespace Timber
                     if (left == Actions.GetColorAt(483, 467).ToString())
                     {
                         Actions.SendKeyss(windowHandle, "a");
-                        Thread.Sleep(142);
+                        Thread.Sleep(number);
                     }
                     else
                     {
                         while(right == Actions.GetColorAt(799, 478).ToString())
                         {
                             Actions.SendKeyss(windowHandle, "d");
-                            Thread.Sleep(142);
+                            Thread.Sleep(number);
                         }
                     }
                 }
