@@ -10,3 +10,7 @@ A Timberman bot that wins the game for you!
 6) Enter settings.
 7) During the two second interval set Timberman as top window.
 8) Enjoy!
+
+# Future Plans
+
+Add a feature for multiplayer :)
